@@ -22,7 +22,7 @@ public class AirportRestController {
 	
 	@ResponseBody
 	@RequestMapping("/getAirportName")
-	public Optional<FileJB> fetchAirportName(@RequestParam("latitude") String latitude, @RequestParam("longitude") String longitude) throws IOException {
+	public String fetchAirportName(@RequestParam("latitude") String latitude, @RequestParam("longitude") String longitude) throws IOException {
 
 		return afs.airportname(latitude,longitude);
 		

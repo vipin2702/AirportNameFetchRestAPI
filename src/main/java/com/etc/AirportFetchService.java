@@ -15,9 +15,11 @@ public class AirportFetchService {
 	@Autowired
 	DataRepository dr;
 
-	public Optional<FileJB> airportname(String latitude, String longitude) {
+	public String airportname(String latitude, String longitude) {
 		
-		return dr.findById(latitude);
+		//return dr.findById(latitude);
+		FileJB airport =  dr.findByLatitudeAndLongitude(latitude, longitude);
+		return airport.getAirport_name();
 		
 
 	}
